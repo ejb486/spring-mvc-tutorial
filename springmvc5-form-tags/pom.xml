@@ -5,7 +5,7 @@
 	<groupId>net.javaguides.springmvc</groupId>
 	<artifactId>springmvc5-form-tags</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>springmvc5-form-tags Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
