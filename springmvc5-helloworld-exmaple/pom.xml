@@ -5,7 +5,7 @@
 	<groupId>net.javaguides.springmvc</groupId>
 	<artifactId>springmvc5-helloworld-exmaple</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>springmvc5-helloworld-exmaple Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
