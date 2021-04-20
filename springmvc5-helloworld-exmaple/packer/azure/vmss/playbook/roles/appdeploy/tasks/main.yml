@@ -1,0 +1,17 @@
+- name: remove basic webapp dir 
+  become: true
+  shell: rm -rf /usr/share/tomcat/webapps/ROOT/*  
+
+- name: download application artiface
+  become: true
+  become_user: webwas
+  get_url :
+    url: "https://doss.sktelecom.com/nexus/repository/maven-releases/net/javaguides/springmvc/springmvc5-helloworld-exmaple/{{ app_version }}/springmvc5-helloworld-exmaple-{{ app_version }}.war"
+    dest: "/usr/share/tomcat/webapps/ROOT/springmvc5-helloworld-exmaple-{{ app_version }}.war"
+    username: "{{ nexus_user }}"
+    password: "{{ nexus_pass }}"
+
+- name: Unzip WAR file
+  become: true
+  unarchive: src=/usr/share/tomcat/webapps/ROOT/springmvc5-helloworld-exmaple-{{ app_version }}.war dest=/usr/share/tomcat/webapps/ROOT/ copy=no mode=0755 owner=webwas group=webwas
+  notify: restart tomcat 
